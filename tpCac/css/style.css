@@ -1,0 +1,390 @@
+*{
+    margin: 0 ;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+    background-color: #FFFBC1;
+    color:black;
+    
+}
+
+a{
+    text-decoration: none;
+ 
+}
+
+ol,ul {
+    list-style: none;
+}
+
+.header{
+    height: 100px;
+    background-color: #FEBE8C;
+}
+
+.navbar{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.menuHamburguesa{
+    display: none;
+}
+
+
+.menuHamburguesa:checked + .ulLinks{
+    height:calc(100vh - 100px) ;
+}
+
+
+
+.ulLinks {
+    width: 100%;
+    background-color: #FEBE8C;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    /* height: ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    transition: all .3s;
+
+}
+
+.link {
+    font-size: 3.1em;
+    color: #f89d9d;
+    font-weight: bold;
+}
+
+
+.fi-rr-menu-burger {
+    cursor: pointer;
+    color: #f46c6c;
+    height: 95px;
+    width: 95px;
+}
+
+/* Flexbox Navbar */
+
+@media (min-width: 768px){
+    .labelHamburguesa{
+        display: none;
+    }
+    .ulLinks{
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 2rem;
+
+    }
+    .link{
+        font-size: 1.2rem;
+        transition: all .3s;
+         
+    }
+    .link:hover{
+       background-color: #f89d9d;
+       color: #FFFBC1;
+        
+    }
+}
+
+
+
+
+
+
+.carousel slide carousel-fade{
+    margin: 10px;
+    width: 70%;
+    height: 50%;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    
+
+} 
+
+.carrousel-inner{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-control-prev{
+    left: 0px;
+    
+}
+
+.carousel-control-next{
+    right: 0px;
+}
+
+.imagen1{
+    width: 100%;
+    height: 600px;
+   
+   
+}
+.imagen2{
+    width: 100%;
+    height: 600px;
+  
+}
+.imagen3{
+    width: 100%;
+    height: 600px;
+   
+}
+.imagen4{
+    width: 100%;
+    height: 600px;
+ 
+}
+.imagen5{
+    width: 100%;
+    height: 600px;
+    
+}
+.imagen6{
+    width: 100%;
+    height: 600px;
+    
+}
+
+.imagenLogo{
+    width: 68px;
+    height: 68x;
+
+}
+
+.sanVochitosTitulo{
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #FFFBC1;
+  font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2em;
+}  
+
+.novedades{
+  text-align: center;
+  justify-content: center;
+  margin: 5px ;
+  color: #F7A4A4;
+  font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2em;
+}
+
+.novedadesFotos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen7{
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+}
+.imagen8{
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+}
+.imagen9{
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.novedadesCarrousel{
+    text-align: left;
+    margin: 5px ;
+    color: #F7A4A4;
+    font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+
+.parrafo{
+    text-align: left;
+  margin: 5px ;
+  color: #000000;
+  font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+
+.tituloDebajoCarrousel{
+    text-align: left;
+    margin: 5px ;
+    color: #F7A4A4;
+    font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+
+.imagen10{
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+    
+}
+
+.imagen11{
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+    
+}
+
+.imagen12{
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+
+.footer{
+    background-color: #B6E2A1;
+    height: 80px;
+    padding: 0;
+    position: relative;
+    
+}
+
+.imagenlogofooter{
+    width: 100px;
+    height: 100x;
+    padding: 5px;
+    float: left;
+}
+
+.pie-pagina {
+    background-color: #B6E2A1; 
+    padding: 20px;
+    text-align: center; 
+  } 
+
+  
+  .contenedor-pie {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .seccion-izquierda {
+    text-align: left; 
+  }
+  
+  .seccion-derecha {
+    text-align: right; 
+  }
+  
+  .footerTitulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f46c6c;
+  }
+  
+  .derechos {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #f46c6c;
+  }
+  
+  .redesSociales {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .redesSociales a {
+    display: inline-block; 
+    margin-right: 10px; 
+  }
+  
+  .redes {
+    color: #f46c6c; 
+    font-size: 20px;
+  }
+  
+  .redes:hover {
+    color: #f89d9d; 
+  }
+  
+
+  .redesSociales a:hover {
+    text-decoration: none;
+  }
+  
+/* Flexbox */
+
+.novedades{
+    display: flex;
+    text-align: center;
+    
+}
+
+
+.novedadesAntesCarrousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.novedadesImagenes {
+    padding: 2% 0; 
+  }
+  
+  .novedadesFotos {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  
+  .imagen7,
+  .imagen8,
+  .imagen9 {
+    width: 33.33%; 
+    margin: 1% 0; 
+    box-sizing: border-box; 
+  }
+  
+  @media (max-width: 768px) {
+    .imagen7,
+    .imagen8,
+    .imagen9 {
+      width: 50%; /* En pantallas tablet */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .imagen7,
+    .imagen8,
+    .imagen9 {
+      width: 100%; /* En pantallas celular */
+    }
+  }
