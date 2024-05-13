@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    
+
+
+<h2>Contacto</h2>
+<p>¡No dudes en dejarnos un mensaje si tienes dudas o sugerencias!</p>
+
+<br>
+<br>
+
+<!-- El sitio web debe incluir un formulario de contacto, con al menos 5
+campos que incluya (un checkbox o radiobutton), un select y una
+imagen, con validación realizada mediante JavaScript para que los
+campos sean obligatorios. -->
+
+
+<form name="contacto">
+
+    Nombre/s <input type="text" name="nombre" size="30" maxlength="100"> 
+    <br>
+    <br>
+    Apellido/s <input type="text" name="apellido" size="30" maxlength="100"> 
+    <br>
+    <br>
+    Correo electrónico <input type="text" name="correo" size="25" maxlength="100"> 
+    <br>
+    <br>
+    Telefono <input type="text" name="telefono" size="20" maxlength="60"> 
+    <br>
+    <br>
+ 
+    Sucursal<br>
+    <select name="sucursal">
+        <option value="Elegir">Elegir
+        <option value="sucursal1">Sucursal 1
+        <option value="sucursal2">Sucursal 2
+        <option value="sucursal3">Sucursal 3
+        <option value="sucursal4">Sucursal 4
+    </select> 
+    <br>
+    <br>
+
+    Horario <br>
+    <select name="horario">
+        <option value="Elegir">Elegir
+        <option value="horario1">Mañana
+        <option value="horario2">Tarde
+        <option value="horario3">Noche
+    </select> 
+    <br>
+    <br>
+
+    Mensaje <br>
+    <textarea cols="70" rows="10" name="comentarios"></textarea> 
+    <br>
+    <br>
+    <br>
+
+
+    <input type="checkbox" name="recibir_info" checked> Acepto recibir información sobre las novedades y promociones de San Vochito 
+    <br>
+    <input type="checkbox" name="terminos" id="terminos"> Términos y Condiciones
+    <br> 
+    <br> 
+
+    <input type="submit" id="btn" name="btn" value="Enviar">
+    <br>
+    <input type="Reset" value="Borrar todo"> 
+    <br>
+    
+</form>
+
+
+<script>
+
+(function(){
+    var contacto = document.getElementsByName('contacto')[0],
+    boton = document.getElementById('btn');
+
+    var validarNombre = function(e){
+        if (contacto.nombre.value == 0){
+            alert("Completa el campo nombre");
+            return 0;
+            e.preventDefault();
+        }
+    }
+
+    var validarApellido = function(e){
+        if (contacto.apellido.value == 0){
+            alert("Completa el campo apellido");
+            return 0;
+            e.preventDefault();
+        }
+    }
+
+    var validarCorreo = function(e){
+        if (contacto.correo.value == 0){
+            alert("Completa el campo correo electrónico");
+            return 0;
+            e.preventDefault();
+        }
+    }
+
+    var validarTelefono = function(e){
+
+        if (document.contacto.telefono.value.length == 0) {
+            alert("Tiene que escribir su número de teléfono")
+            document.contacto.telefono.focus()
+            return 0;
+            e.preventDefault();
+
+        } else {
+            telefono = document.contacto.telefono.value
+            telefono = validarNumero(telefono)
+            document.contacto.telefono.value = telefono
+
+            if (telefono == "") {
+                alert("Tiene que introducir un número de teléfono sin signos ni espacios")
+                document.contacto.telefono.focus()
+                return 0;
+                e.preventDefault();
+            } else {
+                if (document.contacto.telefono.value.length < 10) {
+                alert('El número de teléfono no es valido');
+                return 0; 
+                e.preventDefault();
+                }
+            }
+        } 
+    }
+
+    //ya tá
+    var validarSucursal = function(e){
+        if (document.contacto.sucursal.selectedIndex == 0) {
+            alert("Debe seleccionar una de las sucursales")
+            document.contacto.sucursal.focus()
+            return 0;
+            e.preventDefault();
+        }
+    }
+    
+    //ya tá
+    var  validarHorario = function(e){
+        if (document.contacto.horario.selectedIndex == 0) {
+            alert("Debe seleccionar un horario")
+            document.contacto.horario.focus()
+            return 0;
+            e.preventDefault();
+        }
+    }
+
+    //ya tá
+    var validarMensaje = function(e){
+        if (document.contacto.comentarios.selectedIndex == 0) {
+            alert("¡Se olvidó escribir su mensaje!")
+            document.contacto.comentarios.focus()
+            return 0;
+            e.preventDefault();
+        }
+    }
+
+    //ya tá
+    var validarTerminos = function(e){
+        if (contacto.terminos.checked == false){
+            alert("Acepta los términos y condiciones");
+            return 0;
+            e.preventDefault();
+        }
+    }
+   
+    var validar = function(e){
+        validarNombre(e);
+        validarApellido(e);
+        validarCorreo(e);
+        validarTelefono(e);
+        validarSucursal(e);
+        validarHorario(e);
+        validarTerminos(e);     
+    }
+ 
+    function validarNumero(valor) {
+        if (isNaN(valor)) {
+            return ""
+        } else {          
+            return valor
+        }
+    }
+    contacto.addEventListener("submit", validar);
+}())
+
+</script>
+</body>
+</html>
