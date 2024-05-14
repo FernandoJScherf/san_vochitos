@@ -35,9 +35,6 @@ body {
     font-size: 2rem;
 }
 
-.centrar{
-    text-align: center;
-}
 
 /*celulares, digamos: */
 @media screen and (max-width: 600px) {
