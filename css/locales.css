@@ -212,7 +212,6 @@ body {
 /* Flexbox */
 .contenedor {
     background: rgb(255, 219, 206);
-    
     display: flex;/*flex se aplica siempre sobre el elemento padre.*/
     flex-wrap: wrap;         
     justify-content: space-evenly;
