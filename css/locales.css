@@ -1,26 +1,218 @@
-* {
+*{
+    margin: 0 ;
+    padding: 0; 
     box-sizing: border-box;
 }
 
-html {
-    background-color: rgb(198, 201, 200);
-    margin: 0px;
-    height: 100%;
-}
 
 body {
-    background-color: rgb(255, 219, 206);
-    margin: 0px;
-
-    /*display: flex;*/
-    justify-content: center;
-    padding: 1%;
+    font-family: sans-serif;
+    background-color: #FFFBC1;
+    color:black;
+    
 }
 
-.contenedor {
-    background: grey;
-    border: 4px solid;
+.header{
+    height: 100px;
+    background-color: #FEBE8C;
+}
 
+.navbar{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.menuHamburguesa{
+    display: none;
+}
+
+
+.menuHamburguesa:checked + .ulLinks{
+    height:calc(100vh - 100px) ;
+}
+
+
+.ulLinks {
+    width: 100%;
+    background-color: #FEBE8C;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    /* height: ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    transition: all .3s;
+
+}
+
+.link {
+    font-size: 3.1em;
+    color: #f89d9d;
+    font-weight: bold;
+}
+
+
+.fi-rr-menu-burger {
+    cursor: pointer;
+    color: #f46c6c;
+    height: 95px;
+    width: 95px;
+}
+
+/* Flexbox Navbar */
+
+@media (min-width: 768px){
+    .labelHamburguesa{
+        display: none;
+    }
+    .ulLinks{
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 2rem;
+
+    }
+    .link{
+        font-size: 1.2rem;
+        transition: all .3s;
+         
+    }
+    .link:hover{
+       background-color: #f89d9d;
+       color: #FFFBC1;
+        
+    }
+}
+
+
+.imagen1{
+    width: 100%;
+    height: 600px;
+   
+   
+}
+
+
+.imagenLogo{
+    width: 68px;
+    height: 68x;
+
+}
+
+.sanVochitosTitulo{
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #FFFBC1;
+  font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2em;
+}  
+
+.imagen2{
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+
+
+.parrafo{
+    text-align: left;
+  margin: 5px ;
+  color: #000000;
+  font-family: poetsen system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+
+
+.footer{
+    background-color: #B6E2A1;
+    height: 80px;
+    padding: 0;
+    position: relative;
+    
+}
+
+.imagenlogofooter{
+    width: 80px;
+    height: 80x;
+    padding: 5px;
+    float: left;
+}
+
+.pie-pagina {
+    background-color: #B6E2A1; 
+    padding: 20px;
+    text-align: center; 
+  } 
+
+  
+  .contenedor-pie {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .seccion-izquierda {
+    text-align: left; 
+  }
+  
+  .seccion-derecha {
+    text-align: right; 
+  }
+  
+  .footerTitulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f46c6c;
+  }
+  
+  .derechos {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #f46c6c;
+  }
+  
+  .redesSociales {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .redesSociales a {
+    display: inline-block; 
+    margin-right: 10px; 
+  }
+  
+  .redes {
+    color: #f46c6c; 
+    font-size: 20px;
+  }
+  
+  .redes:hover {
+    color: #f89d9d; 
+  }
+  
+
+  .redesSociales a:hover {
+    text-decoration: none;
+  }
+  
+/* Flexbox */
+.contenedor {
+    background: rgb(255, 219, 206);
+    
     display: flex;/*flex se aplica siempre sobre el elemento padre.*/
     flex-wrap: wrap;         
     justify-content: space-evenly;
@@ -29,20 +221,16 @@ body {
 }
 
 .item {
-    border: 5px dashed;
-    border-color: darkblue;
-    color:aliceblue;
+    border-color: rgb(255, 219, 206);
+    color:rgb(255, 219, 206);
     font-size: 2rem;
 }
 
-.centrar{
-    text-align: center;
-}
 
 /*celulares, digamos: */
 @media screen and (max-width: 600px) {
     body {
-        background-color: goldenrod;
+        background-color: rgb(255, 219, 206);
     }    
     .contenedor {
         flex-direction: column;
@@ -54,14 +242,14 @@ body {
     .item {
         width: 60vw;
         height: 60vw;
-        background-color: red;
+        background-color: rgb(255, 219, 206);
     }
 }
 
 /*tablets, ponele: */
 @media only screen and (min-width: 600px) {
     body {
-        background-color: brown;
+        background-color:rgb(255, 219, 206);
     }
     .contenedor {
         flex-direction: row;
@@ -73,14 +261,14 @@ body {
     .item {
         width: 33vw;
         height: 33vw;
-        background-color: blue;
+        background-color: rgb(255, 219, 206);
     }
 }
 
 /*Desktops, por ahí: */
 @media only screen and (min-width: 1280px) {
     body {
-        background-color: yellow;
+        background-color: rgb(255, 219, 206);
     }
 
     .contenedor {
@@ -93,6 +281,6 @@ body {
     .item {
         width:  16vw;
         height: 16vw;
-        background-color: green;
+        background-color: rgb(255, 219, 206);
     }
 }
