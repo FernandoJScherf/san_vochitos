@@ -5,196 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
 </head>
-<body>
+
+<body> 
+
+    <h1>Contacto</h2>
+    <h2>¿Cómo fue tu experiencia en San Vochito?</h2>
+    <br>
+
+    <form name="contacto">
+
+        Nombre/s 
+        <br>
+        <input type="text" name="nombre" size="30" maxlength="100"> 
+        <p id="textoNombre"></p>
+        <br>
+        <br>
+
+        Apellido/s 
+        <br>
+        <input type="text" name="apellido" size="30" maxlength="100"> 
+        <p id="textoApellido"></p>
+        <br>
+        <br>
+
+        Correo electrónico 
+        <br>
+        <input type="email" name="correo" size="25" maxlength="256"> 
+        <p id="textoCorreo"></p>
+        <br>
+        <br>
+
+        Teléfono 
+        <br>
+        <input type="tel" name="telefono" size="20" maxlength="12"> 
+        <p id="textoTelefono"></p>
+        <br>
+        <br>
     
+        Sucursal
+        <br>
+        <select name="sucursal">
+            <option value="Elegir">Elegir
+            <option value="sucursal1">Sucursal 1
+            <option value="sucursal2">Sucursal 2
+            <option value="sucursal3">Sucursal 3
+            <option value="sucursal4">Sucursal 4
+        </select> 
+        <p id="textoSucursal"></p>
+        <br>
+        <br>
 
+        Fecha 
+        <input type="date" name="fecha" id="fecha" min="2024-01-01" max="2024-12-31" >
+        <p id="textoFecha"></p>
+        <br>
+        <br>
 
-<h2>Contacto</h2>
-<p>¡No dudes en dejarnos un mensaje si tienes dudas o sugerencias!</p>
+        Horario 
+        <br>
+        <select name="horario">
+            <option value="Elegir">Elegir
+            <option value="horario1">Mañana
+            <option value="horario2">Tarde
+            <option value="horario3">Noche
+        </select> 
+        <p id="textoHorario"></p>
+        <br>
+        <br>
 
-<br>
-<br>
+        Mensaje 
+        <br>
+        <textarea name="mensaje" cols="70" rows="10" onkeyup="countChars(this);"></textarea>
+        <p id="textoMensaje"></p>
+        <br>
 
-<!-- El sitio web debe incluir un formulario de contacto, con al menos 5
-campos que incluya (un checkbox o radiobutton), un select y una
-imagen, con validación realizada mediante JavaScript para que los
-campos sean obligatorios. -->
+        Adjuntar una foto    
+        <input type="file" name= "foto" id="foto" accept="image/*">
+        <br>
+        <p id="textoImagen"></p>
+        <br>
+        <br>
+        <br>
 
-
-<form name="contacto">
-
-    Nombre/s <input type="text" name="nombre" size="30" maxlength="100"> 
-    <br>
-    <br>
-    Apellido/s <input type="text" name="apellido" size="30" maxlength="100"> 
-    <br>
-    <br>
-    Correo electrónico <input type="text" name="correo" size="25" maxlength="100"> 
-    <br>
-    <br>
-    Telefono <input type="text" name="telefono" size="20" maxlength="60"> 
-    <br>
-    <br>
- 
-    Sucursal<br>
-    <select name="sucursal">
-        <option value="Elegir">Elegir
-        <option value="sucursal1">Sucursal 1
-        <option value="sucursal2">Sucursal 2
-        <option value="sucursal3">Sucursal 3
-        <option value="sucursal4">Sucursal 4
-    </select> 
-    <br>
-    <br>
-
-    Horario <br>
-    <select name="horario">
-        <option value="Elegir">Elegir
-        <option value="horario1">Mañana
-        <option value="horario2">Tarde
-        <option value="horario3">Noche
-    </select> 
-    <br>
-    <br>
-
-    Mensaje <br>
-    <textarea cols="70" rows="10" name="comentarios"></textarea> 
-    <br>
-    <br>
-    <br>
-
-
-    <input type="checkbox" name="recibir_info" checked> Acepto recibir información sobre las novedades y promociones de San Vochito 
-    <br>
-    <input type="checkbox" name="terminos" id="terminos"> Términos y Condiciones
-    <br> 
-    <br> 
-
-    <input type="submit" id="btn" name="btn" value="Enviar">
-    <br>
-    <input type="Reset" value="Borrar todo"> 
-    <br>
+        <input type="checkbox" name="info" checked> Acepto recibir información sobre las novedades y promociones de San Vochito 
+        <br>
     
-</form>
+        <input type="checkbox" name="terminos" id="terminos"> Términos y Condiciones
+        <br>
+        <p id="textoTerminos"></p>
+        <br> 
+        <br> 
+
+        <input type="submit" id="btn" name="btn" value="Enviar">
+        <br>
+
+        <input type="Reset" value="Borrar"> 
+        <br>
+        
+    </form>
 
 
-<script>
-
-(function(){
-    var contacto = document.getElementsByName('contacto')[0],
-    boton = document.getElementById('btn');
-
-    var validarNombre = function(e){
-        if (contacto.nombre.value == 0){
-            alert("Completa el campo nombre");
-            return 0;
-            e.preventDefault();
+    <script>
+        //CONTADOR DE CARACTÉRES
+        function countChars(obj){
+            var maxLength = 150;
+            var strLength = obj.value.length;
+            var charRemain = (maxLength - strLength);
+            
+            if(charRemain < 0){
+                document.getElementById("textoMensaje").innerHTML = '<span style="color: red;">Estás excedido del límite de '+maxLength+' caracteres</span>';
+            }else{
+                document.getElementById("textoMensaje").innerHTML = charRemain+' caracteres restantes';
+            }
         }
-    }
 
-    var validarApellido = function(e){
-        if (contacto.apellido.value == 0){
-            alert("Completa el campo apellido");
-            return 0;
-            e.preventDefault();
-        }
-    }
+        //FECHA MÁXIMA
+        let hoy = new Date();
+        let dd = hoy.getDate();
+        let mm = hoy.getMonth() + 1; //January is 0!
+        let yyyy = hoy.getFullYear();
+        if (dd < 10) {dd = '0' + dd}
+        if (mm < 10) { mm = '0' + mm}
+        hoy = yyyy + '-' + mm + '-' + dd;
+        minimo = "2024-01-01";
+        let fecha = document.getElementById("fecha");
+        fecha.max = hoy;
+        fecha.min = minimo;
+        
+        //LUEGO DE PRESIONAR ENVIAR
+        (function(){
+            var contacto = document.getElementsByName('contacto')[0],
+            boton = document.getElementById('btn');
 
-    var validarCorreo = function(e){
-        if (contacto.correo.value == 0){
-            alert("Completa el campo correo electrónico");
-            return 0;
-            e.preventDefault();
-        }
-    }
-
-    var validarTelefono = function(e){
-
-        if (document.contacto.telefono.value.length == 0) {
-            alert("Tiene que escribir su número de teléfono")
-            document.contacto.telefono.focus()
-            return 0;
-            e.preventDefault();
-
-        } else {
-            telefono = document.contacto.telefono.value
-            telefono = validarNumero(telefono)
-            document.contacto.telefono.value = telefono
-
-            if (telefono == "") {
-                alert("Tiene que introducir un número de teléfono sin signos ni espacios")
-                document.contacto.telefono.focus()
-                return 0;
-                e.preventDefault();
-            } else {
-                if (document.contacto.telefono.value.length < 10) {
-                alert('El número de teléfono no es valido');
-                return 0; 
-                e.preventDefault();
+            var validarNombre = function(e){
+                if (document.contacto.nombre.value == 0){
+                    document.getElementById("textoNombre").innerHTML = '<span style="color: red;">Ingrese su nombre</span>';
+                    e.preventDefault();
                 }
             }
-        } 
-    }
 
-    //ya tá
-    var validarSucursal = function(e){
-        if (document.contacto.sucursal.selectedIndex == 0) {
-            alert("Debe seleccionar una de las sucursales")
-            document.contacto.sucursal.focus()
-            return 0;
-            e.preventDefault();
-        }
-    }
-    
-    //ya tá
-    var  validarHorario = function(e){
-        if (document.contacto.horario.selectedIndex == 0) {
-            alert("Debe seleccionar un horario")
-            document.contacto.horario.focus()
-            return 0;
-            e.preventDefault();
-        }
-    }
+            var validarApellido = function(e){
+                if (document.contacto.apellido.value == 0){
+                    document.getElementById("textoApellido").innerHTML = '<span style="color: red;">Ingrese su apellido</span>';
+                    e.preventDefault();
+                }
+            }
 
-    //ya tá
-    var validarMensaje = function(e){
-        if (document.contacto.comentarios.selectedIndex == 0) {
-            alert("¡Se olvidó escribir su mensaje!")
-            document.contacto.comentarios.focus()
-            return 0;
-            e.preventDefault();
-        }
-    }
+            var validarCorreo = function(e){
+                if (document.contacto.correo.value == 0){
+                    document.getElementById("textoCorreo").innerHTML = '<span style="color: red;">Ingrese su correo electrónico</span>';
+                    e.preventDefault();
+                }
+            }
 
-    //ya tá
-    var validarTerminos = function(e){
-        if (contacto.terminos.checked == false){
-            alert("Acepta los términos y condiciones");
-            return 0;
-            e.preventDefault();
-        }
-    }
-   
-    var validar = function(e){
-        validarNombre(e);
-        validarApellido(e);
-        validarCorreo(e);
-        validarTelefono(e);
-        validarSucursal(e);
-        validarHorario(e);
-        validarTerminos(e);     
-    }
- 
-    function validarNumero(valor) {
-        if (isNaN(valor)) {
-            return ""
-        } else {          
-            return valor
-        }
-    }
-    contacto.addEventListener("submit", validar);
-}())
+            var validarTelefono = function(e){
 
-</script>
+                if (document.contacto.telefono.value.length == 0) {
+                    document.getElementById("textoTelefono").innerHTML = '<span style="color: red;">Ingrese su número de teléfono</span>';
+                    e.preventDefault();
+
+                }else{
+                    telefono = document.contacto.telefono.value
+                    telefono = validarNumero(telefono)
+                    document.contacto.telefono.value = telefono
+
+                    if (telefono == "") {
+                        document.getElementById("textoTelefono").innerHTML = '<span style="color: red;">Introduzca un número de teléfono, sin signos ni espacios</span>';
+                        e.preventDefault();
+
+                    } else {
+                        if (document.contacto.telefono.value.length < 10) {
+                            document.getElementById("textoTelefono").innerHTML = '<span style="color: red;">El número de teléfono introducido no es valido</span>';
+                            e.preventDefault();
+                        }
+                    }
+
+                    function validarNumero(valor) {
+                        if (isNaN(valor)) {
+                            return ""
+                        } else {          
+                            return valor
+                        }
+                    }
+                }
+            }
+
+            var validarSucursal = function(e){
+                if (document.contacto.sucursal.selectedIndex == 0) {
+                    document.getElementById("textoSucursal").innerHTML = '<span style="color: red;">Seleccione una sucursal</span>';
+                    e.preventDefault();
+                }
+            }
+            
+            var validarFecha = function (e){
+                if (document.contacto.fecha.value == 0){
+                    document.getElementById("textoFecha").innerHTML = '<span style="color: red;">Ingrese una fecha</span>';
+                    e.preventDefault();
+                }
+            }
+
+            var  validarHorario = function(e){
+                if (document.contacto.horario.selectedIndex == 0) {
+                    document.getElementById("textoHorario").innerHTML = '<span style="color: red;">Seleccione un horario</span>';
+                    e.preventDefault();
+                }
+            }
+            
+            
+            var validarMensaje = function (e){
+                objetoTextarea=document.contacto.mensaje
+                maxLength=150
+                
+                if(objetoTextarea.value.length==0) {
+                    document.getElementById("textoMensaje").innerHTML = '<span style="color: red;">Escriba un mensaje</span>';
+                    e.preventDefault();
+                } else {
+                    if(objetoTextarea.value.length > maxLength) { 
+                        objetoTextarea.value = objetoTextarea.value.substr(0,maxLength); 
+                        document.getElementById("textoMensaje").innerHTML = '<span style="color: red;">Se ha sobrepasado la longitud máxima permitida para el texto</span>';
+                        e.preventDefault();
+                    } 
+                }
+            }
+
+            var validarImagen = function (e){
+                let archivo = document.getElementById('foto').files[0];
+                let tiposPermitidos = ['image/jpeg', 'image/png'];
+                let tamañoMaximo = 2 * 1024 * 1024; // 2MB
+
+                if (contacto.foto.value==0) {
+                    document.getElementById("textoImagen").innerHTML = '<span style="color: red;">Adjunte una foto de su ticket</span>';
+                    e.preventDefault();
+                } else {
+                    if (!tiposPermitidos.includes(archivo.type)) {
+                        document.getElementById("textoImagen").innerHTML = '<span style="color: red;">Tipo de archivo no permitido. Por favor, sube una imagen JPEG o PNG.</span>';
+                        e.preventDefault();
+                    } else {
+                        if (archivo.size > tamañoMaximo) {
+                            document.getElementById("textoImagen").innerHTML = '<span style="color: red;">La imagen es demasiado grande. El tamaño máximo permitido es 2MB.</span>';
+                            e.preventDefault();
+                        } 
+                    }
+                }
+            }
+            
+            var validarTerminos = function(e){
+                if (document.contacto.terminos.checked == false){
+                    document.getElementById("textoTerminos").innerHTML = '<span style="color: red;">Acepte los términos y condiciones.</span>';
+                    e.preventDefault();
+                }
+            }
+
+            var validar = function(e){
+                validarNombre(e);
+                validarApellido(e);
+                validarCorreo(e);
+                validarTelefono(e);
+                validarSucursal(e);
+                validarFecha(e);
+                validarHorario(e);
+                validarMensaje(e);
+                validarImagen(e);
+                validarTerminos(e);   
+                alert("¡Gracias por completar el formulario!")  
+            }
+            contacto.addEventListener("submit", validar);
+        }())
+
+    </script>
 </body>
 </html>
