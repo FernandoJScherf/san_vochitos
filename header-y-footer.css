@@ -1,0 +1,161 @@
+*{
+    margin: 0 ;
+    padding: 0; 
+    box-sizing: border-box;
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+ol,ul {
+    list-style: none;
+}
+
+
+/* MENÚ HAMBURGUESA */
+.header{
+    height: 40px;
+    width: 100%;
+    background-color: #F7A4A4;;
+    position: fixed;
+    top: 0;
+
+}
+.navbar{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.imagenLogo{
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+.menuHamburguesa{
+    display: none;
+}
+.fi-rr-menu-burger {
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+.menuHamburguesa:checked + .ulLinks{
+    height:calc(18vh - 10px) ;
+
+}
+.ulLinks {
+    width: 100%;
+    background-color:  #F7A4A4;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all .2s;
+}
+.link {
+    margin-right: 20px;
+    margin-top: 0px;;
+    margin-bottom: 10px;;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.link:hover{
+    color: black; 
+}
+@media (min-width: 768px){
+    .labelHamburguesa{
+        display: none;
+    }
+    .ulLinks{
+        position: static;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: right;
+        flex-direction: row;
+    }
+    .link{
+        margin-top: 0px;;
+        margin-bottom: 10px;;
+        color: white;
+        font-family: "Raleway", sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        transition: all .2s;
+    }
+    .link:hover{
+       color: black; 
+    }
+}
+
+
+/*FOOTER*/
+.footer{
+    background-color: #F7A4A4;
+    width: 100%;
+    height: 150px;
+
+    position: static;
+    bottom: 0;
+}
+.imagenlogofooter{
+    width: 150px;
+    height: 150x;
+    padding: 10px;
+    float: left;
+}
+.seccion-derecha {
+    text-align: right; 
+    padding: 1em;
+}
+.redesSociales a {
+    color: white; 
+    font-size: 20px;
+    margin-right: 10px; 
+    display: inline-flex; 
+}
+.redes:hover {
+    color: black; 
+}
+.seccion-izquierda {
+    text-align: left; 
+    margin-left: 130px;
+}
+.liLinksFooter{
+    display: inline-flex;
+}
+.linkFooter{
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0.3em;
+}
+.linkFooter:hover{
+    color: black;
+}
+.derechos {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin-left: 165px;
+    text-align: left;
+}
+
+
+
