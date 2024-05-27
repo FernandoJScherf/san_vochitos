@@ -1,0 +1,150 @@
+:root {
+    --color_primario: #F7A4A4;
+    --color_primario_suave: #F7A4A4;
+    --color_blanco: #fff;
+    --altura_header: 40px;
+    --padding_left_right: 0.5rem;
+    --ancho_maximo: 1200px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    background-color: #bebebe;
+} */
+
+.logo_SanVoch {
+    border: blue solid 1px;
+    /* font-size: 1rem; */
+    /* height: var(--altura_header); */
+    /* height: 60px; */
+    margin: 0;
+    width: var(--altura_header);
+    height: var(--altura_header);
+
+    transition-duration: .9s;
+    transition-property: rotate;
+    transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+
+}
+
+.logo_SanVoch:hover {
+    rotate: 360deg;
+    /* width: 110%; */
+}
+
+.header_principal {
+    height: var(--altura_header);
+    width: 100%;
+    background-color: var(--color_primario);
+
+    position: fixed;
+    top: 0;
+}
+
+.header_principal nav {
+    
+    height: 100%;
+    width: min(1200px, 100%);
+    display: flex; 
+
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    padding: 0px var(--padding_left_right);
+
+    border: red solid 1px;
+}
+
+.header_principal input {
+    display: none;
+}
+
+.navbar_ul_links {
+    list-style: none;
+    
+    width: 100%;
+    background-color: var(--color_primario_suave);
+    position: absolute;
+    top: var(--altura_header);
+    left: 0;
+    height: 0px;
+    /* height: calc(100vh - var(--altura_header)); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    overflow: hidden;
+
+    border: greenyellow solid 1px;
+}
+
+.navbar_ul_links a {
+    text-decoration: none;
+    font-size: 3.5rem;
+    color: var(--color_blanco);
+    transition: color 0.3s;
+}
+
+.navbar_ul_links a:hover {
+    /* background-color: #bebebe; */
+    color: black;
+}
+/* .logo_SanVoch {
+    color: var(--color_blanco);
+} */
+
+.label_hamburguesa {
+    color: var(--color_blanco);
+    cursor: pointer;
+}
+
+.label_hamburguesa:hover {
+    rotate: 180deg;
+    transition: rotate .5s;
+}
+
+@media (max-width: 768px) {
+    
+    .input_hamburguesa:checked + .navbar_ul_links {
+        height: calc(100vh - var(--altura_header));;
+        transition: height .3s;
+    }
+    
+    .input_hamburguesa:not(checked) + .navbar_ul_links {
+        transition: height .3s;
+    }
+
+}
+
+
+/*768*/
+@media (min-width: 768px){
+    .label_hamburguesa {
+        display: none;
+    }
+
+    .navbar_ul_links {
+        position: static;
+        height: 100%;
+        width: auto;
+        flex-direction: row;
+
+        margin-bottom: 0;
+    }
+
+    .navbar_ul_links a {
+        font-size: 1.2rem;
+        padding: .2rem .7rem;
+        transition: color .3s;
+    }
+
+
+}
